@@ -1421,13 +1421,12 @@ footer{
 
       <div>
         <div class="f-col-title">Языки</div>
-        <div class="f-langs">
-          <div class="f-lang">🇷🇺 Русский</div>
-          <div class="f-lang">🇬🇧 English</div>
-          <div class="f-lang">🇺🇦 Українська</div>
-          <div class="f-lang">🇩🇪 Deutsch</div>
-          <div class="f-lang">🇪🇸 Español</div>
-          <div class="f-lang">🇫🇷 Français</div>
+       <div class="f-langs">
+  <div class="f-lang" onclick="setLang('ru')">🇷🇺 Русский</div>
+  <div class="f-lang" onclick="setLang('en')">🇬🇧 English</div>
+  <div class="f-lang" onclick="setLang('ua')">🇺🇦 Українська</div>
+  <div class="f-lang" onclick="setLang('de')">🇩🇪 Deutsch</div>
+</div>
         </div>
       </div>
 
@@ -1619,5 +1618,13 @@ function qNext(step,el){
   },360);
 }
 </script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll("[data-ru]").forEach(el => {
+    el.innerText = el.getAttribute("data-" + lang);
+  });
+}
+</script> 
+
 </body>
 </html>
